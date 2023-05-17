@@ -32,6 +32,9 @@ loginForm.addEventListener("submit", (e) => {
             // Login successful
             const user = userCredential.user;
             console.log("Logged in user:", user);
+
+            // Redirect to the "open" page
+            window.open("/open/open.html", "_blank");
         })
         .catch((error) => {
             // Login failed
@@ -40,6 +43,7 @@ loginForm.addEventListener("submit", (e) => {
             console.log("Error:", errorCode, errorMessage);
         });
 });
+
 
 const registerForm = document.getElementById("registerForm");
 registerForm.addEventListener("submit", (e) => {
