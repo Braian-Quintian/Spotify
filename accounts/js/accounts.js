@@ -41,6 +41,7 @@ loginForm.addEventListener("submit", (e) => {
             const errorCode = error.code;
             const errorMessage = error.message;
             console.log("Error:", errorCode, errorMessage);
+
         });
 });
 
@@ -56,6 +57,9 @@ registerForm.addEventListener("submit", (e) => {
             // Registration successful
             const user = userCredential.user;
             console.log("Registered user:", user);
+
+            // Redirect to the "open" page
+            window.location.href = "/open/open.html";
         })
         .catch((error) => {
             // Registration failed
