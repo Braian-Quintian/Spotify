@@ -8,16 +8,17 @@
         <title>Spotify</title>
         <link rel="stylesheet" href="/accounts/css/accounts.css">
         <script src="/accounts/js/accounts.js" type="module" defer></script>
+        
     </head>
 
     <body>
         <h1>Login</h1>
         <form id="loginForm">
             <label for="email">Email:</label>
-            <input type="email" id="email" pattern="[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,4}" required>
+            <input type="email" id="email" pattern="[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]+" required>
             <br>
             <label for="password">Password:</label>
-            <input type="password" id="password" required>
+            <input type="password" id="password" min="8" max="16" required>
             <br>
             <button type="submit">Login</button>
         </form>
@@ -25,10 +26,32 @@
         <h1>Register</h1>
         <form id="registerForm">
             <label for="registerEmail">Email:</label>
-            <input type="email" id="registerEmail" pattern="[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,4}" required>
+            <input type="email" id="registerEmail" pattern="[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]+" required>
             <br>
             <label for="registerPassword">Password:</label>
             <input type="password" id="registerPassword" required>
+            <ul id="passwordRequirements">
+                <li id="lengthRequirement">
+                    <span class="requirementLabel">Más de 8 caracteres:</span>
+                    <span class="requirementStatus"></span>
+                </li>
+                <li id="uppercaseRequirement">
+                    <span class="requirementLabel">Al menos una letra mayúscula:</span>
+                    <span class="requirementStatus"></span>
+                </li>
+                <li id="lowercaseRequirement">
+                    <span class="requirementLabel">Al menos una letra minúscula:</span>
+                    <span class="requirementStatus"></span>
+                </li>
+                <li id="numberRequirement">
+                    <span class="requirementLabel">Al menos un número:</span>
+                    <span class="requirementStatus"></span>
+                </li>
+                <li id="specialCharRequirement">
+                    <span class="requirementLabel">Al menos un carácter especial:</span>
+                    <span class="requirementStatus"></span>
+                </li>
+            </ul>
             <br>
             <button type="submit">Register</button>
         </form>
