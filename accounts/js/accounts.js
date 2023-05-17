@@ -7,13 +7,13 @@ import { getAuth, createUserWithEmailAndPassword, signInWithEmailAndPassword } f
 // Your web app's Firebase configuration
 // For Firebase JS SDK v7.20.0 and later, measurementId is optional
 const firebaseConfig = {
-    apiKey: "AIzaSyBV8-fnfulxYeUN0ihEBspN3lrc9S793Aw",
-    authDomain: "spotify-d4807.firebaseapp.com",
-    projectId: "spotify-d4807",
-    storageBucket: "spotify-d4807.appspot.com",
-    messagingSenderId: "600857688172",
-    appId: "1:600857688172:web:a428df7fcbdd24d9cd4049",
-    measurementId: "G-20KJGENQDZ"
+  apiKey: "AIzaSyBV8-fnfulxYeUN0ihEBspN3lrc9S793Aw",
+  authDomain: "spotify-d4807.firebaseapp.com",
+  projectId: "spotify-d4807",
+  storageBucket: "spotify-d4807.appspot.com",
+  messagingSenderId: "600857688172",
+  appId: "1:600857688172:web:a428df7fcbdd24d9cd4049",
+  measurementId: "G-20KJGENQDZ"
 };
 
 // Initialize Firebase
@@ -21,49 +21,92 @@ const app = initializeApp(firebaseConfig);
 const analytics = getAnalytics(app);
 const auth = getAuth();
 
+/* LOGIN FORM */
 const loginForm = document.getElementById("loginForm");
 loginForm.addEventListener("submit", (e) => {
-    e.preventDefault();
-    const email = document.getElementById("email").value;
-    const password = document.getElementById("password").value;
+  e.preventDefault();
+  const email = document.getElementById("email").value;
+  const password = document.getElementById("password").value;
 
-    signInWithEmailAndPassword(auth, email, password)
-        .then((userCredential) => {
-            // Login successful
-            const user = userCredential.user;
-            console.log("Logged in user:", user);
+  signInWithEmailAndPassword(auth, email, password)
+    .then((userCredential) => {
+      // Login successful
+      const user = userCredential.user;
+      console.log("Logged in user:", user);
 
-            // Redirect to the "open" page
-            window.location.href = "/open/open.html";
-        })
-        .catch((error) => {
-            // Login failed
-            const errorCode = error.code;
-            const errorMessage = error.message;
-            console.log("Error:", errorCode, errorMessage);
-        });
+      // Redirect to the "open" page
+      window.location.href = "/open/open.html";
+    })
+    .catch((error) => {
+      // Login failed
+      const errorCode = error.code;
+      const errorMessage = error.message;
+      console.log("Error:", errorCode, errorMessage);
+    });
 });
 
-
+/* REGISTER FORM */
 const registerForm = document.getElementById("registerForm");
 registerForm.addEventListener("submit", (e) => {
-    e.preventDefault();
-    const email = document.getElementById("registerEmail").value;
-    const password = document.getElementById("registerPassword").value;
+  e.preventDefault();
+  const email = document.getElementById("registerEmail").value;
+  const password = document.getElementById("registerPassword").value;
 
+  const lengthRequirement = password.length >= 8;
+  const uppercaseRequirement = /[A-Z]/.test(password);
+  const lowercaseRequirement = /[a-z]/.test(password);
+  const numberRequirement = /[0-9]/.test(password);
+  const specialCharRequirement = /[!@#$%^&*.]/.test(password);
+
+  if (lengthRequirement && uppercaseRequirement && lowercaseRequirement && numberRequirement && specialCharRequirement) {
     createUserWithEmailAndPassword(auth, email, password)
-        .then((userCredential) => {
-            // Registration successful
-            const user = userCredential.user;
-            console.log("Registered user:", user);
+      .then((userCredential) => {
+        // Registration successful
+        const user = userCredential.user;
+        console.log("Registered user:", user);
 
-            // Redirect to the "open" page
-            window.location.href = "/open/open.html";
-        })
-        .catch((error) => {
-            // Registration failed
-            const errorCode = error.code;
-            const errorMessage = error.message;
-            console.log("Error:", errorCode, errorMessage);
-        });
+        // Redirect to the "open" page
+        window.location.href = "/open/open.html";
+      })
+      .catch((error) => {
+        // Registration failed
+        const errorCode = error.code;
+        const errorMessage = error.message;
+        console.log("Error:", errorCode, errorMessage);
+      });
+  } else {
+    console.log("Password requirements not met");
+  }
 });
+
+/* PASSWORD REQUIREMENTS */
+const passwordInput = document.getElementById("registerPassword");
+const passwordRequirements = document.getElementById("passwordRequirements");
+
+passwordInput.addEventListener("input", () => {
+  const password = passwordInput.value;
+
+  const lengthRequirement = password.length >= 8;
+  const uppercaseRequirement = /[A-Z]/.test(password);
+  const lowercaseRequirement = /[a-z]/.test(password);
+  const numberRequirement = /[0-9]/.test(password);
+  const specialCharRequirement = /[!@#$%^&*.]/.test(password);
+
+  updateRequirementStatus("lengthRequirement", lengthRequirement);
+  updateRequirementStatus("uppercaseRequirement", uppercaseRequirement);
+  updateRequirementStatus("lowercaseRequirement", lowercaseRequirement);
+  updateRequirementStatus("numberRequirement", numberRequirement);
+  updateRequirementStatus("specialCharRequirement", specialCharRequirement);
+});
+
+function updateRequirementStatus(requirementId, isFulfilled) {
+  const requirementStatus = passwordRequirements.querySelector(`#${requirementId} .requirementStatus`);
+
+  if (isFulfilled) {
+    requirementStatus.textContent = "✔";
+    requirementStatus.style.color = "green";
+  } else {
+    requirementStatus.textContent = "✘";
+    requirementStatus.style.color = "red";
+  }
+}
