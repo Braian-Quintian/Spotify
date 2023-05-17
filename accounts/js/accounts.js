@@ -34,7 +34,7 @@ loginForm.addEventListener("submit", (e) => {
             console.log("Logged in user:", user);
 
             // Redirect to the "open" page
-            window.open("/open/open.html", "_blank");
+            window.location.href = "/open/open.html";
         })
         .catch((error) => {
             // Login failed
