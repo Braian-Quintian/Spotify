@@ -21,17 +21,6 @@ const app = initializeApp(firebaseConfig);
 const analytics = getAnalytics(app);
 const auth = getAuth();
 
-// Check if a user is already signed in when the page loads
-auth.onAuthStateChanged((user) => {
-    if (user) {
-        console.log("User is already signed in:", user);
-    } else {
-        console.log("No user is signed in");
-        // Redirect to the login page
-        window.location.href = "/accounts/accounts.html";
-    }
-});
-
 const loginForm = document.getElementById("loginForm");
 loginForm.addEventListener("submit", (e) => {
     e.preventDefault();
