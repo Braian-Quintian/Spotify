@@ -1,11 +1,11 @@
-/* <INIT FIREBASE */
-// Import the functions you need from the SDKs you need
+// <INIT FIREBASE>
+
+// Import the necessary functions from the required SDKs
 import { initializeApp } from "https://www.gstatic.com/firebasejs/9.22.0/firebase-app.js";
 import { getAnalytics } from "https://www.gstatic.com/firebasejs/9.22.0/firebase-analytics.js";
 import { getAuth, createUserWithEmailAndPassword, signInWithEmailAndPassword } from "https://www.gstatic.com/firebasejs/9.22.0/firebase-auth.js";
 
-// Your web app's Firebase configuration
-// For Firebase JS SDK v7.20.0 and later, measurementId is optional
+// Configuration for your web app in Firebase
 const firebaseConfig = {
     apiKey: "AIzaSyBV8-fnfulxYeUN0ihEBspN3lrc9S793Aw",
     authDomain: "spotify-d4807.firebaseapp.com",
@@ -22,12 +22,17 @@ const analytics = getAnalytics(app);
 const auth = getAuth();
 
 /* LOGIN FORM */
+
+// Get the login form element
 const loginForm = document.getElementById("loginForm");
+
+// Add a submit event listener to the login form
 loginForm.addEventListener("submit", (e) => {
     e.preventDefault();
     const email = document.getElementById("email").value;
     const password = document.getElementById("password").value;
 
+    // Sign in the user with email and password
     signInWithEmailAndPassword(auth, email, password)
         .then((userCredential) => {
             // Login successful
@@ -46,12 +51,17 @@ loginForm.addEventListener("submit", (e) => {
 });
 
 /* REGISTER FORM */
+
+// Get the register form element
 const registerForm = document.getElementById("registerForm");
+
+// Add a submit event listener to the register form
 registerForm.addEventListener("submit", (e) => {
     e.preventDefault();
     const email = document.getElementById("registerEmail").value;
     const password = document.getElementById("registerPassword").value;
 
+    // Check password requirements
     const lengthRequirement = password.length >= 8;
     const uppercaseRequirement = /[A-Z]/.test(password);
     const lowercaseRequirement = /[a-z]/.test(password);
@@ -59,6 +69,7 @@ registerForm.addEventListener("submit", (e) => {
     const specialCharRequirement = /[!@#$%^&*.]/.test(password);
 
     if (lengthRequirement && uppercaseRequirement && lowercaseRequirement && numberRequirement && specialCharRequirement) {
+        // Create a new user with email and password
         createUserWithEmailAndPassword(auth, email, password)
             .then((userCredential) => {
                 // Registration successful
@@ -80,12 +91,16 @@ registerForm.addEventListener("submit", (e) => {
 });
 
 /* PASSWORD REQUIREMENTS */
+
+// Get the password input element and the password requirements element
 const passwordInput = document.getElementById("registerPassword");
 const passwordRequirements = document.getElementById("passwordRequirements");
 
+// Add an input event listener to the password input
 passwordInput.addEventListener("input", () => {
     const password = passwordInput.value;
 
+    // Check password requirements
     const lengthRequirement = password.length >= 8;
     const uppercaseRequirement = /[A-Z]/.test(password);
     const lowercaseRequirement = /[a-z]/.test(password);
@@ -99,6 +114,7 @@ passwordInput.addEventListener("input", () => {
     updateRequirementStatus("specialCharRequirement", specialCharRequirement);
 });
 
+// Function to update the requirement status
 function updateRequirementStatus(requirementId, isFulfilled) {
     const requirementStatus = passwordRequirements.querySelector(`#${requirementId} .requirementStatus`);
 
