@@ -6,9 +6,9 @@
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <title>Spotify</title>
-        <link rel="shortcut icon" href="accounts/img/favicon.ico" type="image/x-icon">
-        <link rel="stylesheet" href="accounts/css/accounts.css">
-        <script src="accounts/js/accounts.js" type="module" defer></script>
+        <link rel="shortcut icon" href="img/favicon.ico" type="image/x-icon">
+        <link rel="stylesheet" href="css/accounts.css">
+        <script src="js/accounts.js" type="module" defer></script>
     </head>
 
     <body>
@@ -16,15 +16,17 @@
             <h2>Login</h2>
             <form id="loginForm">
                 <div class="user-box">
-                    <input type="email" id="email" pattern="[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]+" required autocomplete="email">
+                    <input type="email" id="email" pattern="[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]+" required
+                        autocomplete="email">
                     <label for="email">Email</label>
                 </div>
 
                 <div class="user-box">
-                    <input type="password" id="password" minlength="8" maxlength="16" required autocomplete="current-password">
+                    <input type="password" id="password" minlength="8" maxlength="16" required
+                        autocomplete="current-password">
                     <label for="password">Password</label>
                 </div>
-                
+
                 <button type="submit">
                     <span></span>
                     <span></span>
@@ -34,39 +36,39 @@
                 </button>
             </form>
         </div>
-            <!-- <h2>Register</h2>
-                <form id="registerForm">
-                    <label for="registerEmail">Email:</label>
-                    <input type="email" id="registerEmail" pattern="[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]+" required
-                        autocomplete="email">
-                    <br>
-                    <label for="registerPassword">Password:</label>
-                    <input type="password" id="registerPassword" required autocomplete="new-password">
-                    <ul id="passwordRequirements">
-                        <li id="lengthRequirement">
-                            <span class="requirementLabel">Más de 8 caracteres:</span>
-                            <span class="requirementStatus"></span>
-                        </li>
-                        <li id="uppercaseRequirement">
-                            <span class="requirementLabel">Al menos una letra mayúscula:</span>
-                            <span class="requirementStatus"></span>
-                        </li>
-                        <li id="lowercaseRequirement">
-                            <span class="requirementLabel">Al menos una letra minúscula:</span>
-                            <span class="requirementStatus"></span>
-                        </li>
-                        <li id="numberRequirement">
-                            <span class="requirementLabel">Al menos un número:</span>
-                            <span class="requirementStatus"></span>
-                        </li>
-                        <li id="specialCharRequirement">
-                            <span class="requirementLabel">Al menos un carácter especial:</span>
-                            <span class="requirementStatus"></span>
-                        </li>
-                    </ul>
-                    <br>
-                    <button type="submit">Register</button>
-                </form> -->
+        <!-- <h2>Register</h2>
+        <form id="registerForm">
+            <label for="registerEmail">Email:</label>
+            <input type="email" id="registerEmail" pattern="[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]+" required
+                autocomplete="email">
+            <br>
+            <label for="registerPassword">Password:</label>
+            <input type="password" id="registerPassword" required autocomplete="new-password">
+            <ul id="passwordRequirements">
+                <li id="lengthRequirement">
+                    <span class="requirementLabel">Más de 8 caracteres:</span>
+                    <span class="requirementStatus"></span>
+                </li>
+                <li id="uppercaseRequirement">
+                    <span class="requirementLabel">Al menos una letra mayúscula:</span>
+                    <span class="requirementStatus"></span>
+                </li>
+                <li id="lowercaseRequirement">
+                    <span class="requirementLabel">Al menos una letra minúscula:</span>
+                    <span class="requirementStatus"></span>
+                </li>
+                <li id="numberRequirement">
+                    <span class="requirementLabel">Al menos un número:</span>
+                    <span class="requirementStatus"></span>
+                </li>
+                <li id="specialCharRequirement">
+                    <span class="requirementLabel">Al menos un carácter especial:</span>
+                    <span class="requirementStatus"></span>
+                </li>
+            </ul>
+            <br>
+            <button type="submit">Register</button>
+        </form> -->
     </body>
 
 </html>
