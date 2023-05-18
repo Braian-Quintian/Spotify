@@ -1,60 +1,62 @@
 <!DOCTYPE html>
 <html lang="en">
 
-    <head>
-        <meta charset="UTF-8">
-        <meta http-equiv="X-UA-Compatible" content="IE=edge">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>Spotify</title>
-        <link rel="stylesheet" href="/accounts/css/accounts.css">
-        <script src="/accounts/js/accounts.js" type="module" defer></script>
-        
-    </head>
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Spotify</title>
+  <link rel="shortcut icon" href="/accounts/img/favicon.ico" type="image/x-icon">
+  <link rel="stylesheet" href="/accounts/css/accounts.css">
+  <script src="/accounts/js/accounts.js" type="module" defer></script>
+</head>
 
-    <body>
-        <h1>Login</h1>
-        <form id="loginForm">
-            <label for="email">Email:</label>
-            <input type="email" id="email" pattern="[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]+" required>
-            <br>
-            <label for="password">Password:</label>
-            <input type="password" id="password" min="8" max="16" required>
-            <br>
-            <button type="submit">Login</button>
-        </form>
+<body>
+  <div class="color">
+    <h1>Login</h1>
+    <form id="loginForm">
+      <label for="email">Email:</label>
+      <input type="email" id="email" pattern="[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]+" required autocomplete="email">
+      <br>
+      <label for="password">Password:</label>
+      <input type="password" id="password" minlength="8" maxlength="16" required autocomplete="current-password">
+      <br>
+      <button type="submit">Login</button>
+    </form>
 
-        <h1>Register</h1>
-        <form id="registerForm">
-            <label for="registerEmail">Email:</label>
-            <input type="email" id="registerEmail" pattern="[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]+" required>
-            <br>
-            <label for="registerPassword">Password:</label>
-            <input type="password" id="registerPassword" required>
-            <ul id="passwordRequirements">
-                <li id="lengthRequirement">
-                    <span class="requirementLabel">Más de 8 caracteres:</span>
-                    <span class="requirementStatus"></span>
-                </li>
-                <li id="uppercaseRequirement">
-                    <span class="requirementLabel">Al menos una letra mayúscula:</span>
-                    <span class="requirementStatus"></span>
-                </li>
-                <li id="lowercaseRequirement">
-                    <span class="requirementLabel">Al menos una letra minúscula:</span>
-                    <span class="requirementStatus"></span>
-                </li>
-                <li id="numberRequirement">
-                    <span class="requirementLabel">Al menos un número:</span>
-                    <span class="requirementStatus"></span>
-                </li>
-                <li id="specialCharRequirement">
-                    <span class="requirementLabel">Al menos un carácter especial:</span>
-                    <span class="requirementStatus"></span>
-                </li>
-            </ul>
-            <br>
-            <button type="submit">Register</button>
-        </form>
-    </body>
+    <h1>Register</h1>
+    <form id="registerForm">
+      <label for="registerEmail">Email:</label>
+      <input type="email" id="registerEmail" pattern="[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]+" required autocomplete="email">
+      <br>
+      <label for="registerPassword">Password:</label>
+      <input type="password" id="registerPassword" required autocomplete="new-password">
+      <ul id="passwordRequirements">
+        <li id="lengthRequirement">
+          <span class="requirementLabel">Más de 8 caracteres:</span>
+          <span class="requirementStatus"></span>
+        </li>
+        <li id="uppercaseRequirement">
+          <span class="requirementLabel">Al menos una letra mayúscula:</span>
+          <span class="requirementStatus"></span>
+        </li>
+        <li id="lowercaseRequirement">
+          <span class="requirementLabel">Al menos una letra minúscula:</span>
+          <span class="requirementStatus"></span>
+        </li>
+        <li id="numberRequirement">
+          <span class="requirementLabel">Al menos un número:</span>
+          <span class="requirementStatus"></span>
+        </li>
+        <li id="specialCharRequirement">
+          <span class="requirementLabel">Al menos un carácter especial:</span>
+          <span class="requirementStatus"></span>
+        </li>
+      </ul>
+      <br>
+      <button type="submit">Register</button>
+    </form>
+  </div>
+</body>
 
 </html>
