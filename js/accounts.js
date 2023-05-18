@@ -40,7 +40,7 @@ loginForm.addEventListener("submit", (e) => {
             console.log("Logged in user:", user);
 
             // Redirect to the "open" page
-            window.location.href = "./open/open.html";
+            window.location.href = "https://braian-quintian.github.io/Spotify/open/open.html";
         })
         .catch((error) => {
             // Login failed
@@ -77,7 +77,7 @@ registerForm.addEventListener("submit", (e) => {
                 console.log("Registered user:", user);
 
                 // Redirect to the "open" page
-                window.location.href = "./open/open.html";
+                window.location.href = "https://braian-quintian.github.io/Spotify/open/open.html";
             })
             .catch((error) => {
                 // Registration failed
