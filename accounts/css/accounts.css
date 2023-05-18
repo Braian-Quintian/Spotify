@@ -66,10 +66,12 @@ body {
 
 .login-box form button {
     width: 50%;
-    height: 45px;
+    height: 50px;
+    justify-content: center;
+    align-items: center;
     position: relative;
-    display: inline-block;
-    padding: 10px 20px 10px 0;
+    display: flex;
+    padding: 10px;
     color: #03e9f4;
     font-size: 16px;
     text-decoration: none;
@@ -81,6 +83,13 @@ body {
     background: none;
     border: none;
     cursor: pointer;
+}
+
+.login-box button .btn-text {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: auto;
 }
 
 .login-box button span {
@@ -176,8 +185,4 @@ body {
     color: #fff;
     border-radius: 5px;
     box-shadow: 0 0 5px #03e9f4, 0 0 25px #03e9f4, 0 0 50px #03e9f4, 0 0 100px #03e9f4;
-}
-.btn-text {
-    padding-left: 2rem;
-    margin: 0.001rem;
 }
