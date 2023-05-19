@@ -1,188 +1,672 @@
 html {
-    height: 100%;
+  height: 100%;
 }
 
 body {
-    margin: 0;
-    padding: 0;
-    font-family: sans-serif;
-    background: linear-gradient(#141e30, #243b55);
+  margin: 0;
+  padding: 0;
+  font-family: sans-serif;
+  background: linear-gradient(#141e30, #243b55);
 }
 
+.container {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  margin: auto;
+  width: 950px;
+  height: 550px;
+  padding: 40px;
+  transform: translate(-50%, -50%);
+  background: rgba(0, 0, 0, .5);
+  box-sizing: border-box;
+  box-shadow: 0 15px 25px rgba(0, 0, 0, .6);
+  border-radius: 10px;
+}
+/*
+
+
+*************************************************************
+
+
+*/
+/* SIGN IN */
 .login-box {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    width: 400px;
-    padding: 40px;
-    transform: translate(-50%, -50%);
-    background: rgba(0, 0, 0, .5);
-    box-sizing: border-box;
-    box-shadow: 0 15px 25px rgba(0, 0, 0, .6);
-    border-radius: 10px;
+  position: absolute;
+  top: 50%;
+  left: 25%;
+  height: 650px;
+  width: 400px;
+  padding: 40px;
+  transform: translate(-50%, -50%);
+  background: rgba(0, 0, 0, .5);
+  box-sizing: border-box;
+  box-shadow: 0 15px 25px rgba(0, 0, 0, .6);
+  border-radius: 10px;
 }
-
+.login-box-child {
+  display: block;
+  position: absolute;
+  justify-content: center;
+  align-items: center;
+  top: 50%;
+  left: 50%;
+  height: 400px;
+  width: 400px;
+  padding: 40px;
+  transform: translate(-50%, -50%);
+  box-sizing: border-box;
+  border-radius: 10px;
+}
 .login-box h2 {
-    margin: 0 0 30px;
-    padding: 0;
-    color: #fff;
-    text-align: center;
+  margin: 0 0 30px;
+  padding: 0;
+  color: #fff;
+  text-align: center;
 }
 
 .login-box .user-box {
-    position: relative;
+  position: relative;
 }
 
 .login-box .user-box input {
-    width: 100%;
-    padding: 10px 0;
-    font-size: 16px;
-    color: #fff;
-    margin-bottom: 30px;
-    border: none;
-    border-bottom: 1px solid #fff;
-    outline: none;
-    background: transparent;
+  width: 100%;
+  padding: 10px 0;
+  font-size: 16px;
+  color: #fff;
+  margin-bottom: 30px;
+  border: none;
+  border-bottom: 1px solid #fff;
+  outline: none;
+  background: transparent;
 }
 
 .login-box .user-box label {
-    position: absolute;
-    top: 0;
-    left: 0;
-    padding: 10px 0;
-    font-size: 16px;
-    color: #fff;
-    pointer-events: none;
-    transition: .5s;
+  position: absolute;
+  top: 0;
+  left: 0;
+  padding: 10px 0;
+  font-size: 16px;
+  color: #fff;
+  pointer-events: none;
+  transition: .5s;
 }
 
 .login-box .user-box input:focus~label,
 .login-box .user-box input:valid~label {
-    top: -20px;
-    left: 0;
-    color: #03e9f4;
-    font-size: 12px;
+  top: -20px;
+  left: 0;
+  color: #03e9f4;
+  font-size: 12px;
 }
 
 .login-box form button {
-    width: 50%;
-    height: 50px;
-    justify-content: center;
-    align-items: center;
-    position: relative;
-    display: flex;
-    padding: 10px;
-    color: #03e9f4;
-    font-size: 16px;
-    text-decoration: none;
-    text-transform: uppercase;
-    overflow: hidden;
-    transition: .5s;
-    margin-top: 40px;
-    letter-spacing: 4px;
-    background: none;
-    border: none;
-    cursor: pointer;
+  width: 100%;
+  height: 50px;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  display: flex;
+  padding: 10px;
+  color: #03e9f4;
+  font-size: 16px;
+  text-decoration: none;
+  text-transform: uppercase;
+  overflow: hidden;
+  transition: .5s;
+  margin-top: 40px;
+  letter-spacing: 4px;
+  background: none;
+  border: none;
+  cursor: pointer;
 }
 
 .login-box button .btn-text {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    margin: auto;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: auto;
 }
 
 .login-box button span {
-    position: absolute;
-    display: block;
+  position: absolute;
+  display: block;
 }
 
 .login-box button span:nth-child(1) {
-    top: 0;
-    left: -100%;
-    width: 100%;
-    height: 2px;
-    background: linear-gradient(90deg, transparent, #03e9f4);
-    animation: btn-anim1 1s linear infinite;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 2px;
+  background: linear-gradient(90deg, transparent, #03e9f4);
+  animation: btn-anim1 1s linear infinite;
 }
 
 @keyframes btn-anim1 {
-    0% {
-        left: -100%;
-    }
+  0% {
+    left: -100%;
+  }
 
-    50%,
-    100% {
-        left: 100%;
-    }
+  50%,
+  100% {
+    left: 100%;
+  }
 }
 
 .login-box button span:nth-child(2) {
-    top: -100%;
-    right: 0;
-    width: 2px;
-    height: 100%;
-    background: linear-gradient(180deg, transparent, #03e9f4);
-    animation: btn-anim2 1s linear infinite;
-    animation-delay: .25s;
+  top: -100%;
+  right: 0;
+  width: 2px;
+  height: 100%;
+  background: linear-gradient(180deg, transparent, #03e9f4);
+  animation: btn-anim2 1s linear infinite;
+  animation-delay: .25s;
 }
 
 @keyframes btn-anim2 {
-    0% {
-        top: -100%;
-    }
+  0% {
+    top: -100%;
+  }
 
-    50%,
-    100% {
-        top: 100%;
-    }
+  50%,
+  100% {
+    top: 100%;
+  }
 }
 
 .login-box button span:nth-child(3) {
-    bottom: 0;
-    right: -100%;
-    width: 100%;
-    height: 2px;
-    background: linear-gradient(270deg, transparent, #03e9f4);
-    animation: btn-anim3 1s linear infinite;
-    animation-delay: .5s;
+  bottom: 0;
+  right: -100%;
+  width: 100%;
+  height: 2px;
+  background: linear-gradient(270deg, transparent, #03e9f4);
+  animation: btn-anim3 1s linear infinite;
+  animation-delay: .5s;
 }
 
 @keyframes btn-anim3 {
-    0% {
-        right: -100%;
-    }
+  0% {
+    right: -100%;
+  }
 
-    50%,
-    100% {
-        right: 100%;
-    }
+  50%,
+  100% {
+    right: 100%;
+  }
 }
 
 .login-box button span:nth-child(4) {
-    bottom: -100%;
-    left: 0;
-    width: 2px;
-    height: 100%;
-    background: linear-gradient(360deg, transparent, #03e9f4);
-    animation: btn-anim4 1s linear infinite;
-    animation-delay: .75s;
+  bottom: -100%;
+  left: 0;
+  width: 2px;
+  height: 100%;
+  background: linear-gradient(360deg, transparent, #03e9f4);
+  animation: btn-anim4 1s linear infinite;
+  animation-delay: .75s;
 }
 
 @keyframes btn-anim4 {
-    0% {
-        bottom: -100%;
-    }
+  0% {
+    bottom: -100%;
+  }
 
-    50%,
-    100% {
-        bottom: 100%;
-    }
+  50%,
+  100% {
+    bottom: 100%;
+  }
 }
 
 .login-box button:hover {
-    background: #03e9f4;
-    color: #fff;
-    border-radius: 5px;
-    box-shadow: 0 0 5px #03e9f4, 0 0 25px #03e9f4, 0 0 50px #03e9f4, 0 0 100px #03e9f4;
+  background: #03e9f4;
+  color: #fff;
+  border-radius: 5px;
+  box-shadow: 0 0 5px #03e9f4, 0 0 25px #03e9f4, 0 0 50px #03e9f4, 0 0 100px #03e9f4;
+}
+/*
+
+
+*************************************************************
+
+
+*/
+
+/*  REGISTER */
+
+
+.register-box {
+  position: absolute;
+  top: 50%;
+  left: 75%;
+  height: 650px;
+  width: 400px;
+  padding: 40px;
+  transform: translate(-50%, -50%);
+  background: rgba(0, 0, 0, .5);
+  box-sizing: border-box;
+  box-shadow: 0 15px 25px rgba(0, 0, 0, .6);
+  border-radius: 10px;
+}
+
+.register-box-child {
+  display: block;
+  position: absolute;
+  justify-content: center;
+  align-items: center;
+  top: 50%;
+  left: 50%;
+  height: 400px;
+  width: 400px;
+  padding: 40px;
+  transform: translate(-50%, -50%);
+  box-sizing: border-box;
+  border-radius: 10px;
+}
+
+.register-box h2 {
+  margin: 0 0 30px;
+  padding: 0;
+  color: #fff;
+  text-align: center;
+}
+
+.register-box .user-box {
+  position: relative;
+}
+
+.register-box .user-box input {
+  width: 100%;
+  padding: 10px 0;
+  font-size: 16px;
+  color: #fff;
+  margin-bottom: 30px;
+  border: none;
+  border-bottom: 1px solid #fff;
+  outline: none;
+  background: transparent;
+}
+
+.register-box .user-box label {
+  position: absolute;
+  top: 0;
+  left: 0;
+  padding: 10px 0;
+  font-size: 16px;
+  color: #fff;
+  pointer-events: none;
+  transition: .5s;
+}
+
+.register-box .user-box input:focus~label,
+.register-box .user-box input:valid~label {
+  top: -20px;
+  left: 0;
+  color: #03e9f4;
+  font-size: 12px;
+}
+
+.register-box form button {
+  width: 100%;
+  height: 50px;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  display: flex;
+  padding: 10px;
+  color: #03e9f4;
+  font-size: 16px;
+  text-decoration: none;
+  text-transform: uppercase;
+  overflow: hidden;
+  transition: .5s;
+  margin-top: 40px;
+  letter-spacing: 4px;
+  background: none;
+  border: none;
+  cursor: pointer;
+}
+
+.register-box button .btn-text {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: auto;
+}
+
+.register-box button span {
+  position: absolute;
+  display: block;
+}
+
+.register-box button span:nth-child(1) {
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 2px;
+  background: linear-gradient(90deg, transparent, #03e9f4);
+  animation: btn-anim1 1s linear infinite;
+}
+
+@keyframes btn-anim1 {
+  0% {
+      left: -100%;
+  }
+
+  50%,
+  100% {
+      left: 100%;
+  }
+}
+
+.register-box button span:nth-child(2) {
+  top: -100%;
+  right: 0;
+  width: 2px;
+  height: 100%;
+  background: linear-gradient(180deg, transparent, #03e9f4);
+  animation: btn-anim2 1s linear infinite;
+  animation-delay: .25s;
+}
+
+@keyframes btn-anim2 {
+  0% {
+      top: -100%;
+  }
+
+  50%,
+  100% {
+      top: 100%;
+  }
+}
+
+.register-box button span:nth-child(3) {
+  bottom: 0;
+  right: -100%;
+  width: 100%;
+  height: 2px;
+  background: linear-gradient(270deg, transparent, #03e9f4);
+  animation: btn-anim3 1s linear infinite;
+  animation-delay: .5s;
+}
+
+@keyframes btn-anim3 {
+  0% {
+      right: -100%;
+  }
+
+  50%,
+  100% {
+      right: 100%;
+  }
+}
+
+.register-box button span:nth-child(4) {
+  bottom: -100%;
+  left: 0;
+  width: 2px;
+  height: 100%;
+  background: linear-gradient(360deg, transparent, #03e9f4);
+  animation: btn-anim4 1s linear infinite;
+  animation-delay: .75s;
+}
+
+@keyframes btn-anim4 {
+  0% {
+      bottom: -100%;
+  }
+
+  50%,
+  100% {
+      bottom: 100%;
+  }
+}
+
+.register-box button:hover {
+  background: #03e9f4;
+  color: #fff;
+  border-radius: 5px;
+  box-shadow: 0 0 5px #03e9f4, 0 0 25px #03e9f4, 0 0 50px #03e9f4, 0 0 100px #03e9f4;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* *********************************************************** */
+/*
+$gray: #8E9AAF;
+$lavender: #CBC0D3;
+$pale: #EAC7CC;
+$white: #f6f6f6;
+
+$pink: darken($pale, 20%);
+
+@import url('https://fonts.googleapis.com/css?family=Open+Sans:300,400|Lora');
+
+$sans-serif: 'Open Sans', sans-serif;
+$serif: 'Lora', serif;
+
+body {
+  background: $lavender;
+}
+
+
+.container {
+  margin: auto;
+  width: 650px;
+  height: 550px;
+  position: relative;
+}
+
+.welcome {
+  background: $white;
+  width: 650px;
+  height: 415px;
+  position: absolute;
+  top: 25%;
+  border-radius: 5px;
+  box-shadow: 5px 5px 5px rgba(0,0,0,.1);
+}
+
+.pinkbox {
+  position: absolute;
+  top: -10%;
+  left: 5%;
+  background: $pale;
+  width: 320px;
+  height: 500px;
+  border-radius: 5px;
+  box-shadow: 2px 0 10px rgba(0,0,0,.1);
+  transition: all .5s ease-in-out;
+  z-index: 2;
+}
+
+.nodisplay {
+  display:none;
+  transition: all .5s ease;
+}
+
+.leftbox, .rightbox {
+  position: absolute;
+  width: 50%;
+  transition: 1s all ease;
+}
+
+.leftbox {
+  left: -2%;
+}
+.rightbox {
+  right: -2%;
+}
+
+
+h1 {
+  font-family: $sans-serif;
+  text-align: center;
+  margin-top: 95px;
+  text-transform: uppercase;
+  color: $white;
+  font-size: 2em;
+  letter-spacing: 8px;
+}
+
+.title {
+  font-family: $serif;
+  color: $gray;
+  font-size: 1.8em;
+  line-height: 1.1em;
+  letter-spacing: 3px;
+  text-align: center;
+  font-weight: 300;
+  margin-top: 20%;
+}
+.desc {
+  margin-top: -8px;
+}
+.account {
+  margin-top: 45%;
+  font-size: 10px;
+}
+p {
+  font-family: $sans-serif;
+  font-size: .7em;
+  letter-spacing: 2px;
+  color: $gray;
+  text-align: center;
+}
+
+span {
+  color: $pale;
+}
+
+.flower {
+  position: absolute;
+  width: 120px;
+  height: 120px;
+  top: 46%;
+  left: 29%;
+  opacity: .7;
+}
+
+.smaller {
+  width: 90px;
+  height: 100px;
+  top: 48%;
+  left: 38%;
+  opacity: .9;
+}
+
+button {
+  padding: 12px;
+  font-family: $sans-serif;
+  text-transform: uppercase;
+  letter-spacing: 3px;
+  font-size: 11px;
+  border-radius: 10px;
+  margin: auto;
+  outline: none;
+  display: block;
+  &:hover {
+    background: $pale;
+    color: $white;
+    transition: background-color 1s ease-out;
+  }
+}
+
+.button {
+  margin-top: 3%;
+  background: $white;
+  color: $pink;
+  border: solid 1px $pale;
+}
+
+
+
+form {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  padding-top: 7px;
+}
+.more-padding{
+  padding-top: 35px;
+  input {
+    padding: 12px;
+  }
+  .submit {
+    margin-top: 45px;
+  }
+}
+.submit {
+  margin-top: 25px;
+  padding: 12px;
+  border-color: $pink;
+  &:hover {
+    background: $lavender;
+    border-color: darken($lavender, 5%);
+  }
+}
+
+input {
+  background: $pale;
+  width: 65%;
+  color: $pink;
+  border: none;
+  border-bottom: 1px solid rgba($white, 0.5);
+  padding: 9px;
+  margin: 7px;
+  &::placeholder {
+    color: rgba($white, 1);
+    letter-spacing: 2px;
+    font-size: 1.3em;
+    font-weight: 100;
+  }
+  &:focus {
+    color: $pink;
+    outline: none;
+    border-bottom: 1.2px solid rgba($pink, 0.7);
+    font-size: 1em;
+    transition: .8s all ease;
+    &::placeholder {
+      opacity: 0;
+    }
+  }
+}
+
+label {
+  font-family: $sans-serif;
+  color: $pink;
+  font-size: 0.8em;
+  letter-spacing: 1px;
+}
+
+.checkbox {
+  display: inline;
+  white-space: nowrap;
+  position: relative;
+  left: -62px;
+  top: 5px;
+}
+
+input[type=checkbox] {
+  width: 7px;
+  background: $pink;
+}
+
+.checkbox input[type="checkbox"]:checked + label {
+  color: $pink;
+  transition: .5s all ease;
 }
